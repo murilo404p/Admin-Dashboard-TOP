@@ -17,18 +17,26 @@
     padding: 20px;
 }
 
-.svgs {
+#middle-sidebar, #footer-sidebar {
+    padding: 20px;
+}
+
+#sidebar p, #sidebar h2 {
+    color: white;
+}
+
+ul {
+    list-style: none;
+    color: white;
+}
+.svg-header {
     height: 50px;
     width: 50px;
     fill: white;
 } 
 
-.svgs-middle, .svgs-footer {
+.svg-sidebar {
     height: 30px;
     width: 30px;
     fill: white;
-}
-
-#sidebar p, h2 {
-    color: white;
 }
