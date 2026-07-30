@@ -11,7 +11,10 @@
 
 #container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+}
+
+#sidebar-header {
+    padding: 20px;
 }
 
 .svgs {
@@ -19,6 +22,12 @@
     width: 50px;
     fill: white;
 } 
+
+.svgs-middle, .svgs-footer {
+    height: 30px;
+    width: 30px;
+    fill: white;
+}
 
 #sidebar p, h2 {
     color: white;
