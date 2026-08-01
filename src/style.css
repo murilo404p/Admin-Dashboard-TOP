@@ -9,6 +9,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+.buttons {
+    @apply bg-sky-600 rounded-2xl h-15 w-30 duration-200 ease-in-out transform hover:scale-105 text-white font-semibold;
+}
+
 #container {
     display: grid;
     grid-template-columns: 280px 1fr;   
@@ -54,9 +58,22 @@ ul {
 }
 
 #bottom-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 20px; 
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#projects, #reminders {
+    padding: 20px;
+}
+
+#modal {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 .svg-header {

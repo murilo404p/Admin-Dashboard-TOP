@@ -52,7 +52,7 @@
         </nav>
       </section>
       <section id="main-container">
-        <header id="header" class="shadow-2xl">
+        <header id="header">
           <div id="top-header" class="gap-4">
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-header"><title>magnify</title><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>
@@ -64,7 +64,7 @@
               <p class="flex items-center font-bold">Murilo Silva Papacidero</p>
             </div>
           </div>
-          <div id="bottom-header" class="flex flex-col">
+          <div id="bottom-header" class="flex flex-col ">
             <div class="flex items-center gap-2.5">
               <img src="./src/assets/221453892.jpg" alt="photo" class="rounded-[50%] w-25 h-25">
               <div>
@@ -72,23 +72,26 @@
                 <p class="font-semibold">Murilo Silva Papacidero (GitHub:     murilo404p)</p>
               </div>
             </div>
-            <div class="flex justify-center items-center gap-9">
-              <button class="bg-sky-500 w-25 h-10 rounded-2xl text-white font-semibold">New</button>
-              <button class="bg-sky-500 w-25 h-10 rounded-2xl text-white font-semibold">Upload</button>
-              <button class="bg-sky-500 w-25 h-10 rounded-2xl text-white font-semibold">Share</button>
-            </div>
           </div>
         </header>
         <div id="dashboard" class="bg-gray-100">
           <div id="projects">
-            
+            <button id="newBlock" class="buttons">New</button>
           </div>
-          <div>
-
+          <div id="reminders">
+            <button id="newReminder" class="buttons">Reminders</button>
           </div>
         </div>
       </section>
     </section>
+    <div id="modal" class="bg-gray-200 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center h-175 w-125 rounded-[10px] shadow-[5px_5px_10px_rgba(0,0,0,0.5)] animate-[pop-up_0.5s_ease-out] border-orange-300 border-l-7">
+      <div id="title" class="items-center flex justify-center">
+        <textarea id="inputTitle" placeholder="Title" maxlength="35" class="bg-white rounded-2xl w-90 h-30"></textarea>
+      </div>
+      <div>
+
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
