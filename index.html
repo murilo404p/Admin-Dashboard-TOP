@@ -85,21 +85,21 @@
       </section>
     </section>
     <div id="modal" class="bg-gray-200 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center h-175 w-125 rounded-[10px] shadow-[5px_5px_10px_rgba(0,0,0,0.5)] animate-[pop-up_0.5s_ease-out] border-orange-300 border-l-7">
-      <div id="title" class="flex justify-center flex-col">
+      <div id="title" class="flex justify-center flex-col relative">
         <label for="" class="font-bold text-2xl">Title</label>
         <textarea id="inputTitle" maxlength="35" class="bg-white rounded-2xl w-full h-20 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none">
         </textarea>
-        <div id="title-counter">
-          <div id="title-char-counter">0</div>
-          <div id="title-max-counter">/35</div>
+        <div id="title-counter" class="flex bottom-6 right-7 absolute">
+          <div id="title-char-counter" class="p-0 m-0 border-0">0</div>
+          <div id="title-max-counter" class="p-0 m-0 border-0">/35</div>
         </div>
       </div>
-      <div id="title" class="flex justify-center flex-col">
+      <div id="Text" class="flex justify-center flex-col relative">
         <label for="" class="font-bold text-2xl">Text</label>
         <textarea id="inputTitle" maxlength="250" class="bg-white rounded-2xl w-full h-70 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none"></textarea>
-        <div id="text-counter" class="absolute">
-          <div id="text-char-counter">0</div>
-          <div id="text-max-counter">/250</div>
+        <div id="text-counter" class="flex bottom-6 right-7 absolute">
+          <div id="text-char-counter" class="p-0 m-0 border-0">0</div>
+          <div id="text-max-counter" class="p-0 m-0 border-0">/250</div>
         </div>
       </div>
       <div class="flex justify-around">

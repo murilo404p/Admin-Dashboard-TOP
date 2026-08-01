@@ -74,6 +74,10 @@ ul {
     padding: 20px;
 }
 
+#Text {
+    padding: 20px;
+}
+
 #modal {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
