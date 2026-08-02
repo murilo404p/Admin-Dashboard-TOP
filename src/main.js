@@ -10,19 +10,21 @@ let buttonCancelReminders = document.getElementById("buttonCancelReminders");
 
 openModal.addEventListener("click", function(){
     modal.classList.remove("hidden");
-    modal.style.display = "grid";
+    modal.classList.add("grid");
 });
 
 buttonCancelModal.addEventListener("click", function() {
-    modal.style.display = "none";
+    modal.classList.remove("grid");
+    modal.classList.add("hidden");
 });
 
 openReminders.addEventListener("click", function(){
     reminders.classList.remove("hidden");
-    reminders.style.display = "grid";
+    reminders.classList.add("grid");
 })
 
 buttonCancelReminders.addEventListener("click", function() {
-    reminders.style.display = "none";
+    reminders.classList.remove("grid");
+    reminders.classList.add("hidden");
 });
 

@@ -80,13 +80,11 @@ ul {
 
 #modal-reminders {
     padding: 20px;
-    display: none;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
 }
 
 #modal {
-    display: none;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
 }

@@ -84,9 +84,9 @@
         </div>
       </section>
     </section>
-    <div id="modal" class="bg-gray-200 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center h-175 w-125 rounded-[10px] shadow-[5px_5px_10px_rgba(0,0,0,0.5)] animate-[pop-up_0.5s_ease-out] border-orange-300 border-l-7">
+    <div id="modal" class="bg-gray-200 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center h-175 w-125 rounded-[10px] shadow-[5px_5px_10px_rgba(0,0,0,0.5)] animate-[pop-up_0.5s_ease-out] border-orange-300 border-l-7 hidden">
       <div id="title" class="flex justify-center flex-col relative">
-        <label for="" class="font-bold text-2xl">Title</label>
+        <label for="inputTitle" class="font-bold text-2xl">Title</label>
         <textarea id="inputTitle" maxlength="35" class="bg-white rounded-2xl w-full h-20 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none">
         </textarea>
         <div id="title-counter" class="flex bottom-6 right-7 absolute">
@@ -95,8 +95,8 @@
         </div>
       </div>
       <div id="Text" class="flex justify-center flex-col relative">
-        <label for="" class="font-bold text-2xl">Text</label>
-        <textarea id="inputTitle" maxlength="250" class="bg-white rounded-2xl w-full h-70 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none"></textarea>
+        <label for="inputText" class="font-bold text-2xl">Text</label>
+        <textarea id="inputText" maxlength="250" class="bg-white rounded-2xl w-full h-70 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none"></textarea>
         <div id="text-counter" class="flex bottom-6 right-7 absolute">
           <div id="text-char-counter" class="p-0 m-0 border-0">0</div>
           <div id="text-max-counter" class="p-0 m-0 border-0">/250</div>
@@ -107,9 +107,9 @@
         <button class="bg-green-600 rounded-2xl h-15 w-30 duration-200 ease-in-out transform hover:scale-105 text-white font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.5)]">Salvar</button>
       </div>
     </div>
-    <div id="modal-reminders" class="bg-gray-200 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col h-120 w-125 rounded-[10px] shadow-[5px_5px_10px_rgba(0,0,0,0.5)] animate-[pop-up_0.5s_ease-out] border-orange-300 border-l-7 gap-10">
-      <label for="" class="font-bold text-2xl">Reminders</label>
-      <textarea id="inputTitle" maxlength="100" class="bg-white rounded-2xl w-full h-70 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none"></textarea>
+    <div id="modal-reminders" class="bg-gray-200 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col h-120 w-125 rounded-[10px] shadow-[5px_5px_10px_rgba(0,0,0,0.5)] animate-[pop-up_0.5s_ease-out] border-orange-300 border-l-7 gap-10 hidden">
+      <label for="inputReminders" class="font-bold text-2xl">Reminders</label>
+      <textarea id="inputReminders" maxlength="100" class="bg-white rounded-2xl w-full h-70 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none"></textarea>
       <div id="reminders-counter" class="flex bottom-31 right-7 absolute">
         <div id="reminders-char-counter" class="p-0 m-0 border-0">0</div>
         <div id="reminders-max-counter" class="p-0 m-0 border-0">/100</div>
