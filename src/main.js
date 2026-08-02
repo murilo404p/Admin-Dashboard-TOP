@@ -1,30 +1,35 @@
 import './style.css'
 
-let openModal = document.getElementById("newBlock");
-let modal = document.getElementById("modal");
-let buttonCancelModal = document.getElementById("buttonCancelModal");
-let openReminders = document.getElementById("newReminder");
-let reminders = document.getElementById("modal-reminders");
-let buttonCancelReminders = document.getElementById("buttonCancelReminders");
+const modal = document.getElementById("modal");
+const newButton = document.getElementById("newBlock");
+const buttonCancelModal = document.getElementById("buttonCancelModal");
 
+const reminders = document.getElementById("modal-reminders");
+const newReminder = document.getElementById("newReminder");
+const buttonCancelReminders = document.getElementById("buttonCancelReminders");
 
-openModal.addEventListener("click", function(){
-    modal.classList.remove("hidden");
-    modal.classList.add("grid");
+newButton.addEventListener("click", function() {
+    openModal(modal);
 });
 
 buttonCancelModal.addEventListener("click", function() {
-    modal.classList.remove("grid");
-    modal.classList.add("hidden");
+    closeModal(modal);
 });
 
-openReminders.addEventListener("click", function(){
-    reminders.classList.remove("hidden");
-    reminders.classList.add("grid");
-})
-
-buttonCancelReminders.addEventListener("click", function() {
-    reminders.classList.remove("grid");
-    reminders.classList.add("hidden");
+newReminder.addEventListener("click", function() {
+    openModal(reminders);
 });
 
+buttonCancelReminders.addEventListener("click", function(){
+    closeModal(reminders);
+});
+
+function openModal(element) {
+    element.classList.remove("hidden");
+    element.classList.add("grid");
+}
+
+function closeModal(element) {
+    element.classList.remove("grid");
+    element.classList.add("hidden");
+}
