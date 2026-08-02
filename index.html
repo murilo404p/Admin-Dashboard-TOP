@@ -103,7 +103,19 @@
         </div>
       </div>
       <div class="flex justify-around">
-        <button class="bg-red-600 rounded-2xl h-15 w-30 duration-200 ease-in-out transform hover:scale-105 text-white font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.5)]">Cancelar</button>
+        <button class="bg-red-600 rounded-2xl h-15 w-30 duration-200 ease-in-out transform hover:scale-105 text-white font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.5)]" id="buttonCancelModal">Cancelar</button>
+        <button class="bg-green-600 rounded-2xl h-15 w-30 duration-200 ease-in-out transform hover:scale-105 text-white font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.5)]">Salvar</button>
+      </div>
+    </div>
+    <div id="modal-reminders" class="bg-gray-200 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col h-120 w-125 rounded-[10px] shadow-[5px_5px_10px_rgba(0,0,0,0.5)] animate-[pop-up_0.5s_ease-out] border-orange-300 border-l-7 gap-10">
+      <label for="" class="font-bold text-2xl">Reminders</label>
+      <textarea id="inputTitle" maxlength="100" class="bg-white rounded-2xl w-full h-70 resize-none shadow-[5px_5px_10px_rgba(0,0,0,0.5)] focus:outline-none"></textarea>
+      <div id="reminders-counter" class="flex bottom-31 right-7 absolute">
+        <div id="reminders-char-counter" class="p-0 m-0 border-0">0</div>
+        <div id="reminders-max-counter" class="p-0 m-0 border-0">/100</div>
+      </div>
+      <div class="flex justify-around">
+        <button class="bg-red-600 rounded-2xl h-15 w-30 duration-200 ease-in-out transform hover:scale-105 text-white font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.5)]" id="buttonCancelReminders">Cancelar</button>
         <button class="bg-green-600 rounded-2xl h-15 w-30 duration-200 ease-in-out transform hover:scale-105 text-white font-semibold shadow-[5px_5px_10px_rgba(0,0,0,0.5)]">Salvar</button>
       </div>
     </div>
