@@ -8,6 +8,12 @@ const reminders = document.getElementById("modal-reminders");
 const newReminder = document.getElementById("newReminder");
 const buttonCancelReminders = document.getElementById("buttonCancelReminders");
 
+const inputTitle = document.getElementById("inputTitle");
+const inputText =  document.getElementById("inputText");
+
+const buttonSaveModal = document.getElementById("buttonSaveModal");
+const buttonSaveReminders = document.getElementById("buttonSaveReminders");
+
 newButton.addEventListener("click", function() {
     openModal(modal);
 });
@@ -33,3 +39,17 @@ function closeModal(element) {
     element.classList.remove("grid");
     element.classList.add("hidden");
 }
+
+buttonSaveModal.addEventListener("click", function(){
+    const project = {
+        title: inputTitle.value,
+        text: inputText.value
+    }   
+    saveModal(project);
+})
+
+function saveModal(element) {
+    console.log(element);
+}
+
+  
