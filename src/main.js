@@ -19,20 +19,23 @@ const titleCharCounter =  document.getElementById("title-char-counter");
 const textCharCounter =  document.getElementById("text-char-counter");
 const remindersCharCounter = document.getElementById("reminders-char-counter");
 
-newButton.addEventListener("click", function() {
+newButton.addEventListener("click", () => {
     openModal(modal);
 });
 
-buttonCancelModal.addEventListener("click", function() {
+buttonCancelModal.addEventListener("click", () => {
     closeModal(modal);
+    clearInput(inputText, textCharCounter);
+    clearInput(inputTitle, titleCharCounter);
 });
 
-newReminder.addEventListener("click", function() {
+newReminder.addEventListener("click", () => {
     openModal(reminders);
 });
 
-buttonCancelReminders.addEventListener("click", function(){
+buttonCancelReminders.addEventListener("click", () =>{
     closeModal(reminders);
+    clearInput(inputReminders, remindersCharCounter);
 });
 
 function openModal(element) {
@@ -43,12 +46,9 @@ function openModal(element) {
 function closeModal(element) {
     element.classList.remove("grid");
     element.classList.add("hidden");
-    inputText.value = "";
-    inputTitle.value = "";
-    inputReminders.value = "";
 }
 
-buttonSaveModal.addEventListener("click", function(){
+buttonSaveModal.addEventListener("click", () => {
     const project = {
         title: inputTitle.value,
         text: inputText.value
@@ -61,13 +61,22 @@ function saveModal(element) {
 }
 
 inputTitle.addEventListener("input", () => {
-    titleCharCounter.innerText = inputTitle.value.length;
+    updateCounter(titleCharCounter, inputTitle);
 });
 
 inputText.addEventListener("input", ()=> {
-    textCharCounter.innerText = inputText.value.length;
+    updateCounter(textCharCounter, inputText);
 });
 
 inputReminders.addEventListener("input", () => {
-    remindersCharCounter.innerText = inputReminders.value.length;
+    updateCounter(remindersCharCounter, inputReminders);
 });
+
+function updateCounter(counter, input){
+    counter.innerText = input.value.length;
+}
+
+function clearInput(input, counter) {
+    input.value = "";
+    counter.innerText = "0";
+}
