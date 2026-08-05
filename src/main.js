@@ -56,10 +56,16 @@ buttonSaveModal.addEventListener("click", () => {
         title: inputTitle.value,
         text: inputText.value
     }
-    saveModal(project);
+    if(!validateEmptyFields(inputTitle, inputText)) {
+        return;
+    }
+    createProjectCard(project);
+    clearInput(inputTitle, titleCharCounter);
+    clearInput(inputText, textCharCounter);
+    closeModal(modal);
 });
 
-function saveModal(project) {
+function createProjectCard(project) {
     const cardBlock = document.createElement("div");
     const cardTitle = document.createElement("h2");
     const cardText = document.createElement("p");
@@ -68,10 +74,13 @@ function saveModal(project) {
     cardText.textContent = project.text;
     
     cardBlock.classList.add(
-        "bg-gray-600",
+        "grid",
+        "bg-white",
         "rounded-xl",
         "shadow-lg",    
         "p-20!",
+        "border-l-7",
+        "border-sky-500",
     );
 
     cardTitle.classList.add(
@@ -104,4 +113,12 @@ function updateCounter(counter, input){
 function clearInput(input, counter) {
     input.value = "";
     counter.innerText = "0";
+}
+
+function validateEmptyFields(title, text) {
+    if (title.value.trim() === "" || (text.value.trim() === "")) {
+        return false;
+    } else {
+        return true;
+    }
 }
