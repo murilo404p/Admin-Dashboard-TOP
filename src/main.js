@@ -19,6 +19,9 @@ const titleCharCounter =  document.getElementById("title-char-counter");
 const textCharCounter =  document.getElementById("text-char-counter");
 const remindersCharCounter = document.getElementById("reminders-char-counter");
 
+const projectsDashboard = document.getElementById("projects");
+const remindersDashboard = document.getElementById("reminders");
+
 newButton.addEventListener("click", () => {
     openModal(modal);
 });
@@ -52,12 +55,34 @@ buttonSaveModal.addEventListener("click", () => {
     const project = {
         title: inputTitle.value,
         text: inputText.value
-    }   
+    }
     saveModal(project);
 });
 
-function saveModal(element) {
-    console.log(element);
+function saveModal(project) {
+    const cardBlock = document.createElement("div");
+    const cardTitle = document.createElement("h2");
+    const cardText = document.createElement("p");
+
+    cardTitle.textContent = project.title;
+    cardText.textContent = project.text;
+    
+    cardBlock.classList.add(
+        "bg-gray-600",
+        "rounded-xl",
+        "shadow-lg",    
+        "p-20!",
+    );
+
+    cardTitle.classList.add(
+        "bg-sky-500"
+    );
+    cardText.classList.add(
+        "bg-red-600"
+    );
+
+    projectsDashboard.append(cardBlock);
+    cardBlock.append(cardTitle, cardText);
 }
 
 inputTitle.addEventListener("input", () => {

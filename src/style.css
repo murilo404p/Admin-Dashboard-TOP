@@ -64,10 +64,7 @@ ul {
 #dashboard {
     display: grid;
     grid-template-columns: 2fr 1fr;
-}
-
-#projects, #reminders {
-    padding: 20px;
+    grid-template-rows: auto 1fr;
 }
 
 #title {
