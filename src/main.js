@@ -69,7 +69,7 @@ function createProjectCard(project) {
     const cardBlock = document.createElement("div");
     const cardTitle = document.createElement("h2");
     const cardText = document.createElement("p");
-
+    
     cardTitle.textContent = project.title;
     cardText.textContent = project.text;
     
@@ -92,6 +92,20 @@ function createProjectCard(project) {
 
     projectsDashboard.append(cardBlock);
     cardBlock.append(cardTitle, cardText);
+
+    projectsDashboard.classList.add("grid");
+    
+    const totalCards = projectsDashboard.children.length; // retorna quantos filhos tem dentro de projects
+    
+    if(totalCards % 3 === 0) {
+        projectsDashboard.style.gridTemplateColumns = "1fr";
+    } else if (totalCards % 3 === 1) {
+        projectsDashboard.style.gridTemplateColumns = "1fr";
+    } else if(totalCards % 3 === 2) {
+        projectsDashboard.style.gridTemplateColumns = "1fr 1fr";
+    } else {
+        projectsDashboard.style.gridTemplateColumns = "1fr 1fr 1fr"; 
+    }
 }
 
 inputTitle.addEventListener("input", () => {

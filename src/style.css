@@ -91,3 +91,7 @@ ul {
     width: 25px;
     fill: black;
 }
+
+#inputTitle, #inputText, #inputReminders {
+    padding: 4px;
+}
