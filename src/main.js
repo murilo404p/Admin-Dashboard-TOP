@@ -67,8 +67,12 @@ buttonSaveModal.addEventListener("click", () => {
 
 function createProjectCard(project) {
     const cardBlock = document.createElement("div");
+    const cardHeader = document.createElement("div");
+    const cardFooter = document.createElement("div");
     const cardTitle = document.createElement("h2");
     const cardText = document.createElement("p");
+    const favoriteIcon = document.createElement("img");
+    const trashIcon = document.createElement("img");
     
     cardTitle.textContent = project.title;
     cardText.textContent = project.text;
@@ -78,34 +82,62 @@ function createProjectCard(project) {
         "bg-white",
         "rounded-xl",
         "shadow-lg",    
-        "p-20!",
         "border-l-7",
         "border-sky-500",
+        "min-h-40",
+        "gap-3"
+    );
+
+    cardHeader.classList.add(
+        "flex",
+        "flex-col"
     );
 
     cardTitle.classList.add(
-        "bg-sky-500"
+        "text-[20px]",
+        "font-bold",
+        "p-2!",
     );
     cardText.classList.add(
-        "bg-red-600"
+        "h-auto",
+        "p-2!",
     );
 
+    cardFooter.classList.add(
+        "flex",
+        "justify-end",
+    );
+
+    favoriteIcon.classList.add(
+        "svg-sidebar",
+        "hover",
+        "hover:scale-102",
+        "hover:shadow-xl",
+        "duration-200"
+    );
+
+    trashIcon.classList.add(
+        "svg-sidebar",
+        "hover",
+        "hover:scale-102",
+        "hover:shadow-xl",
+        "duration-200"
+    );
+
+    favoriteIcon.src = "./src/assets/star-outline.svg";
+    favoriteIcon.alt = "Favorite";
+    trashIcon.src = "./src/assets/trash-can-outline.svg";
+    trashIcon.alt = "Trash";
+
     projectsDashboard.append(cardBlock);
-    cardBlock.append(cardTitle, cardText);
+    cardBlock.append(cardHeader, cardFooter);
+    cardHeader.append(cardTitle, cardText);
+    cardFooter.append(favoriteIcon, trashIcon);
+    
 
     projectsDashboard.classList.add("grid");
     
-    const totalCards = projectsDashboard.children.length; // retorna quantos filhos tem dentro de projects
-    
-    if(totalCards % 3 === 0) {
-        projectsDashboard.style.gridTemplateColumns = "1fr";
-    } else if (totalCards % 3 === 1) {
-        projectsDashboard.style.gridTemplateColumns = "1fr";
-    } else if(totalCards % 3 === 2) {
-        projectsDashboard.style.gridTemplateColumns = "1fr 1fr";
-    } else {
-        projectsDashboard.style.gridTemplateColumns = "1fr 1fr 1fr"; 
-    }
+
 }
 
 inputTitle.addEventListener("input", () => {
