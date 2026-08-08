@@ -65,6 +65,7 @@ buttonSaveModal.addEventListener("click", () => {
         text: inputText.value,
         time: timeConjunto
     }
+
     if(!validateEmptyFields(inputTitle, inputText)) {
         return;
     }
@@ -198,6 +199,48 @@ function createProjectCard(project) {
 
     projectsDashboard.classList.add("grid");
 
+}
+
+buttonSaveReminders.addEventListener("click", () => {
+    const remindersProject = {
+        text: inputReminders.value,
+    }
+    createRemindersCard(remindersProject)
+    clearInput(inputReminders, remindersCharCounter);
+    closeModal(reminders);
+});
+
+function createRemindersCard(remindersProject) {
+    const remindersCardBlock = document.createElement("div");
+    const textRemindersCard = document.createElement("p");
+
+    textRemindersCard.textContent = remindersProject.text;
+
+    remindersCardBlock.classList.add(
+        "grid",
+        "bg-white",
+        "rounded-xl",
+        "shadow-lg",    
+        "border-l-7",
+        "border-orange-400",
+        "min-h-20",
+        "gap-3",
+        "hover",
+        "hover:scale-101",
+        "duration-200",
+        "card-appear"
+    );
+
+    textRemindersCard.classList.add(
+        "h-auto",
+        "p-2!",
+    );
+
+    
+    remindersDashboard.append(remindersCardBlock);
+    remindersCardBlock.append(textRemindersCard);
+
+    remindersDashboard.classList.add("grid");
 }
 
 inputTitle.addEventListener("input", () => {

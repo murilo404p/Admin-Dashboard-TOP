@@ -103,6 +103,13 @@ ul {
     margin-top: 10px;
 }
 
+#reminders {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 10px;
+}
+
 .card-delete {
     opacity: 0;
     transform: translateY(-20px) scale(0.95);
