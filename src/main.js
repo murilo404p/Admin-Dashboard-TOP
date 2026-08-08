@@ -104,6 +104,7 @@ function createProjectCard(project) {
         "hover",
         "hover:scale-101",
         "duration-200",
+        "card-appear"
     );
 
     cardHeader.classList.add(
@@ -176,17 +177,16 @@ function createProjectCard(project) {
     favoriteIcon.addEventListener("click", () => {
         if (isFavorite === false) {
             isFavorite = true
-            favoriteIcon.src = "./src/assets/yellowstar.svg";
+            setTimeout(() => {
+                cardBlock.classList.add("card-moving");
+                projectsDashboard.prepend(cardBlock);
+                favoriteIcon.src = "./src/assets/yellowstar.svg";
+            }, 200);
         } else {
             isFavorite = false
             favoriteIcon.src = "./src/assets/star-outline.svg";
         }
     });
-
-    favoriteIcon.addEventListener("click", () => {
-
-    });
-
 
     projectsDashboard.append(cardBlock);
     cardBlock.append(cardHeader, cardFooter);

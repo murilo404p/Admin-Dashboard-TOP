@@ -109,6 +109,47 @@ ul {
     transition: 300ms ease;
 }
 
+.card-moving {
+    animation: moveToTop 0.4s ease forwards;
+}
+
+.card-add {
+    transition: 300ms ease;
+}
+
+@keyframes moveToTop {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .favorite-fill {
     background-color: yellow;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-appear {
+    animation: cardAppear 0.4s ease-out;
 }
