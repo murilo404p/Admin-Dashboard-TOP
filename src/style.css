@@ -102,3 +102,13 @@ ul {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     margin-top: 10px;
 }
+
+.card-delete {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    transition: 300ms ease;
+}
+
+.favorite-fill {
+    background-color: yellow;
+}

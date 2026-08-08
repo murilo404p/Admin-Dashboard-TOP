@@ -86,6 +86,7 @@ function createProjectCard(project) {
     const clockIcon = document.createElement("img");
     const favoriteIcon = document.createElement("img");
     const trashIcon = document.createElement("img");
+    let isFavorite = false;
     
     cardTitle.textContent = project.title;
     cardText.textContent = project.text;
@@ -166,8 +167,26 @@ function createProjectCard(project) {
     clockIcon.alt = "clock";
 
     trashIcon.addEventListener("click", () => {
-        cardBlock.remove();
+        cardBlock.classList.add("card-delete");
+        setTimeout(() => {
+            cardBlock.remove();
+        }, 300);
     });
+
+    favoriteIcon.addEventListener("click", () => {
+        if (isFavorite === false) {
+            isFavorite = true
+            favoriteIcon.src = "./src/assets/yellowstar.svg";
+        } else {
+            isFavorite = false
+            favoriteIcon.src = "./src/assets/star-outline.svg";
+        }
+    });
+
+    favoriteIcon.addEventListener("click", () => {
+
+    });
+
 
     projectsDashboard.append(cardBlock);
     cardBlock.append(cardHeader, cardFooter);
