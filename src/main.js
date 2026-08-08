@@ -52,9 +52,18 @@ function closeModal(element) {
 }
 
 buttonSaveModal.addEventListener("click", () => {
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const timeConjunto = month + "/" + day + "/" + year + " " + hours + ":" + minutes;
+    
     const project = {
         title: inputTitle.value,
-        text: inputText.value
+        text: inputText.value,
+        time: timeConjunto
     }
     if(!validateEmptyFields(inputTitle, inputText)) {
         return;
@@ -71,12 +80,17 @@ function createProjectCard(project) {
     const cardFooter = document.createElement("div");
     const cardTitle = document.createElement("h2");
     const cardText = document.createElement("p");
+    const iconsContainer = document.createElement("div");
+    const timerContainer = document.createElement("div");
+    const timer = document.createElement("div");
+    const clockIcon = document.createElement("img");
     const favoriteIcon = document.createElement("img");
     const trashIcon = document.createElement("img");
     
     cardTitle.textContent = project.title;
     cardText.textContent = project.text;
-    
+    timer.textContent = project.time;
+
     cardBlock.classList.add(
         "grid",
         "bg-white",
@@ -85,7 +99,10 @@ function createProjectCard(project) {
         "border-l-7",
         "border-sky-500",
         "min-h-40",
-        "gap-3"
+        "gap-3",
+        "hover",
+        "hover:scale-101",
+        "duration-200",
     );
 
     cardHeader.classList.add(
@@ -105,39 +122,55 @@ function createProjectCard(project) {
 
     cardFooter.classList.add(
         "flex",
-        "justify-end",
+        "justify-between",
+    );
+
+    iconsContainer.classList.add(
+        "flex",
     );
 
     favoriteIcon.classList.add(
         "svg-sidebar",
         "hover",
-        "hover:scale-102",
-        "hover:shadow-xl",
-        "duration-200"
+        "hover:scale-110",
+        "duration-200",
+        "cursor-pointer",
     );
 
     trashIcon.classList.add(
         "svg-sidebar",
         "hover",
-        "hover:scale-102",
-        "hover:shadow-xl",
-        "duration-200"
+        "hover:scale-110",
+        "duration-200",
+        "cursor-pointer",
+    );
+
+    timerContainer.classList.add(
+        "flex",
+        "gap-2",
+    );
+
+    clockIcon.classList.add(
+        "svg-sidebar",
     );
 
     favoriteIcon.src = "./src/assets/star-outline.svg";
     favoriteIcon.alt = "Favorite";
     trashIcon.src = "./src/assets/trash-can-outline.svg";
     trashIcon.alt = "Trash";
+    clockIcon.src = "./src/assets/clock-outline.svg";
+    clockIcon.alt = "clock";
+
 
     projectsDashboard.append(cardBlock);
     cardBlock.append(cardHeader, cardFooter);
     cardHeader.append(cardTitle, cardText);
-    cardFooter.append(favoriteIcon, trashIcon);
+    cardFooter.append(timerContainer, iconsContainer);
+    timerContainer.append(clockIcon,timer);
+    iconsContainer.append(favoriteIcon, trashIcon);
     
 
     projectsDashboard.classList.add("grid");
-    
-
 }
 
 inputTitle.addEventListener("input", () => {
