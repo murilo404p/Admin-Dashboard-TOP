@@ -57,7 +57,7 @@ buttonSaveModal.addEventListener("click", () => {
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
     const hours = date.getHours();
-    const minutes = date.getMinutes();
+    const minutes = date.getMinutes().toString().padStart(2, "0");
     const timeConjunto = month + "/" + day + "/" + year + " " + hours + ":" + minutes;
     
     const project = {
@@ -123,16 +123,19 @@ function createProjectCard(project) {
     cardFooter.classList.add(
         "flex",
         "justify-between",
+        "p-1!"
     );
 
     iconsContainer.classList.add(
         "flex",
+        "items-center",
+        "p-1!"
     );
 
     favoriteIcon.classList.add(
         "svg-sidebar",
         "hover",
-        "hover:scale-110",
+        "hover:scale-120",
         "duration-200",
         "cursor-pointer",
     );
@@ -140,14 +143,15 @@ function createProjectCard(project) {
     trashIcon.classList.add(
         "svg-sidebar",
         "hover",
-        "hover:scale-110",
+        "hover:scale-120",
         "duration-200",
         "cursor-pointer",
     );
 
     timerContainer.classList.add(
         "flex",
-        "gap-2",
+        "items-center",
+        "gap-1",
     );
 
     clockIcon.classList.add(
@@ -161,6 +165,9 @@ function createProjectCard(project) {
     clockIcon.src = "./src/assets/clock-outline.svg";
     clockIcon.alt = "clock";
 
+    trashIcon.addEventListener("click", () => {
+        cardBlock.remove();
+    });
 
     projectsDashboard.append(cardBlock);
     cardBlock.append(cardHeader, cardFooter);
@@ -171,6 +178,7 @@ function createProjectCard(project) {
     
 
     projectsDashboard.classList.add("grid");
+
 }
 
 inputTitle.addEventListener("input", () => {
